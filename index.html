@@ -1,2 +1,252 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Flower Shop</title> <style> body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: url('flower-bg.jpg') no-repeat center center fixed; background-size: cover; color: white; } .container { padding: 20px; text-align: center; } .login-box { background: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 10px; width: 300px; margin: 0 auto; } input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; } button { width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; } a { color: #81c784; text-decoration: none; } </style> </head> <body> <div class="container"> <h1>Welcome to Our Flower Shop</h1> <div class="login-box"> <h2>Login</h2> <form> <input type="text" placeholder="Username" required> <input type="password" placeholder="Password" required> <button type="submit">Log In</button> </form> <p><a href="#">Forgot Password?</a></p> </div> </div> </body> </html> 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Love World ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg,#ff758c,#ffb6c1,#ff4d6d);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.big-heart {
+    font-size: 100px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+h1 {
+    font-size: 38px;
+    text-shadow: 2px 3px 10px #b00040;
+}
+
+p {
+    font-size: 19px;
+}
+
+button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #e91e63;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0 5px 15px #a00040;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+#letterPage {
+    display: none;
+    min-height: 100vh;
+    padding: 30px 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.paper {
+    background: #fff8e7;
+    color: #8b294c;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px #8b294c;
+    line-height: 1.8;
+    animation: openPaper 1s ease;
+}
+
+@keyframes openPaper {
+    from {
+        opacity: 0;
+        transform: scale(.5) rotate(-8deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.paper h2 {
+    color: #e91e63;
+}
+
+#answer {
+    font-size: 23px;
+    color: #e91e63;
+    font-weight: bold;
+}
+
+.bubble {
+    position: fixed;
+    bottom: -50px;
+    z-index: 1;
+    animation: float 9s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-110vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+#celebration {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(255,80,130,.85);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 30px;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts and Bubbles -->
+<script>
+for(let i=0;i<30;i++){
+    let b=document.createElement("div");
+    b.className="bubble";
+    b.innerHTML=Math.random()>.5?"❤️":"🫧";
+    b.style.left=Math.random()*100+"%";
+    b.style.fontSize=(15+Math.random()*30)+"px";
+    b.style.animationDuration=(5+Math.random()*8)+"s";
+    b.style.animationDelay=Math.random()*8+"s";
+    document.body.appendChild(b);
+}
+</script>
+
+<!-- Main Page -->
+<div class="main" id="home">
+
+    <div class="big-heart">❤️</div>
+
+    <h1>Love is Beautiful</h1>
+
+    <p>Welcome to My Love World 💕</p>
+
+    <button onclick="openLetter()">
+        Click Here ❤️
+    </button>
+
+</div>
+
+<!-- Love Letter Page -->
+<div id="letterPage">
+
+    <div class="paper">
+
+        <h2>❤️ என் உயிரான காதலுக்கு ❤️</h2>
+
+        <p>
+        உன்னிடம் என் மனசை முழுக்க சொல்லணும்
+        போல இருக்கிறது.
+        </p>
+
+        <p>
+        நம்ம இடையே நடந்த சண்டைகள்,
+        மனசு வருந்தின தருணங்கள் எல்லாம் மறந்து,
+        இன்னும் நம்ம இருவரும் சேர்ந்து அழகா
+        இருக்க முடியும்னு நம்புறேன்.
+        </p>
+
+        <p>
+        நீ தான் என் சிரிப்பின் காரணம்,
+        என் அமைதியின் முகம்.
+        </p>
+
+        <p>
+        என் வாழ்க்கைப் பயணத்தில்
+        என்னுடன் கடைசி வரை பயணிப்பாயா?
+        </p>
+
+        <h2>I LOVE YOU SO MUCH ❤️</h2>
+
+        <p>என்றும் உன்னை நேசிக்கும் சிவகுமார் 💗</p>
+
+        <button onclick="yesLove()">YES ❤️</button>
+
+        <button onclick="needTime()">I NEED TIME 💗</button>
+
+        <div id="answer"></div>
+
+        <button onclick="goBack()">Back</button>
+
+    </div>
+</div>
+
+<!-- Celebration -->
+<div id="celebration">
+    <div>💖💖💖</div>
+    <h2>Thank You My Love!</h2>
+    <p>You Made My Heart Happy ❤️</p>
+    <button onclick="closeCelebration()">Close</button>
+</div>
+
+<script>
+
+function openLetter(){
+    document.getElementById("home").style.display="none";
+    document.getElementById("letterPage").style.display="block";
+}
+
+function goBack(){
+    document.getElementById("letterPage").style.display="none";
+    document.getElementById("home").style.display="flex";
+}
+
+function yesLove(){
+    document.getElementById("celebration").style.display="flex";
+}
+
+function needTime(){
+    document.getElementById("answer").innerHTML=
+    "Take Your Time ❤️ I Will Respect Your Feelings 💗";
+}
+
+function closeCelebration(){
+    document.getElementById("celebration").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
